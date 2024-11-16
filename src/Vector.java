@@ -1,14 +1,14 @@
-public class Var11C {
+public class Vector {
     private double x;
     private double y;
     private double z;
 
-
-    public Var11C() {
+// Задание С
+    public Vector() {
         this(0, 0, 0);
     }
 
-    public Var11C(double x, double y, double z) {
+    public Vector(double x, double y, double z) {
         this.x = x;
         this.y = y;
         this.z = z;
@@ -43,7 +43,7 @@ public class Var11C {
     }
 
 
-    public static double dotProduct(Var11C v1, Var11C v2) {
+    public static double dotProduct(Vector v1, Vector v2) {
         return v1.x * v2.x + v1.y * v2.y + v1.z * v2.z;
     }
 
@@ -53,7 +53,7 @@ public class Var11C {
     }
 
 
-    public static double angleBetween(Var11C v1, Var11C v2) {
+    public static double angleBetween(Vector v1, Vector v2) {
         double dot = dotProduct(v1, v2);
         double lengths = v1.length() * v2.length();
         if (lengths == 0) {

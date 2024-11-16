@@ -2,10 +2,10 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Var11 {
+public class Bus {
 
            /*
-
+Задание А
        Создать классы, спецификации которых приведены ниже. Определить конструкторы и методы setТип(), getТип(), toString(). Определить дополнительно
         методы в классе, создающем массив объектов. Задать критерий выбора данных
         и вывести эти данные на консоль. В каждом классе, обладающем информацией,
@@ -32,7 +32,7 @@ c) список автобусов, пробег у которых больше 
 
     private int Probeg;
 
-    private static ArrayList<Var11> list = new ArrayList<>();
+    private static ArrayList<Bus> list = new ArrayList<>();
 
 
 
@@ -46,23 +46,23 @@ c) список автобусов, пробег у которых больше 
         System.out.println("Введите искомое значение:");
         String parameter = sc.nextLine();
 
-        for (Var11 var11 : list) {
+        for (Bus bus : list) {
             boolean match = switch (choice) {
-                case 1 -> var11.getS_Name().equals(parameter);
-                case 2 -> var11.getFIO().equals(parameter);
-                case 3 -> var11.getBusNum() == Integer.parseInt(parameter);
-                case 4 -> var11.getMark().equals(parameter);
-                case 5 -> var11.getStartYear() == Integer.parseInt(parameter);
-                case 6 -> var11.getProbeg() == Integer.parseInt(parameter);
+                case 1 -> bus.getS_Name().equals(parameter);
+                case 2 -> bus.getFIO().equals(parameter);
+                case 3 -> bus.getBusNum() == Integer.parseInt(parameter);
+                case 4 -> bus.getMark().equals(parameter);
+                case 5 -> bus.getStartYear() == Integer.parseInt(parameter);
+                case 6 -> bus.getProbeg() == Integer.parseInt(parameter);
                 default -> false;
             };
             if (match) {
-                System.out.println(var11);
+                System.out.println(bus);
             }
         }
     }
 
-    public Var11(){
+    public Bus(){
         this.S_Name = "";
         this.FIO = "";
         this.BusNum = 0;
@@ -74,7 +74,7 @@ c) список автобусов, пробег у которых больше 
     }
 
 
-    public Var11(String S_Name, String FIO, int BusNum, int RouteNum, String Mark, int StartYear, int Probeg){
+    public Bus(String S_Name, String FIO, int BusNum, int RouteNum, String Mark, int StartYear, int Probeg){
         this.S_Name = S_Name;
         this.FIO = FIO;
         this.BusNum = BusNum;

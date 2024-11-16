@@ -1,8 +1,5 @@
-import java.util.ArrayList;
-import java.util.List;
-
-    /*
-    Вариант В
+/*
+Вариант В
 Реализовать методы сложения, вычитания, умножения и деления объектов (для
 тех классов, объекты которых могут поддерживать арифметические действия).
 1. Определить класс Дробь (Рациональная Дробь) в виде пары чисел m и n.
@@ -11,22 +8,23 @@ import java.util.List;
 
 
 cделал 1 вариант тк у меня 11 вариант а там всего 10.
-    */
+Задание B
+*/
 
 
 
 
-    public class Var11B {
+    public class Fraction {
         private int numerator;
         private int denominator;
 
 
-        public Var11B() {
+        public Fraction() {
             this.numerator = 0;
             this.denominator = 1;
         }
 
-        public Var11B(int numerator, int denominator) {
+        public Fraction(int numerator, int denominator) {
             if (denominator == 0) {
                 throw new IllegalArgumentException("Denominator cannot be zero.");
             }
@@ -48,34 +46,34 @@ cделал 1 вариант тк у меня 11 вариант а там все
         }
 
 
-        public Var11B add(Var11B other) {
+        public Fraction add(Fraction other) {
             int newNumerator = this.numerator * other.denominator + other.numerator * this.denominator;
             int newDenominator = this.denominator * other.denominator;
-            return new Var11B(newNumerator, newDenominator);
+            return new Fraction(newNumerator, newDenominator);
         }
 
 
-        public Var11B subtract(Var11B other) {
+        public Fraction subtract(Fraction other) {
             int newNumerator = this.numerator * other.denominator - other.numerator * this.denominator;
             int newDenominator = this.denominator * other.denominator;
-            return new Var11B(newNumerator, newDenominator);
+            return new Fraction(newNumerator, newDenominator);
         }
 
 
-        public Var11B multiply(Var11B other) {
+        public Fraction multiply(Fraction other) {
             int newNumerator = this.numerator * other.numerator;
             int newDenominator = this.denominator * other.denominator;
-            return new Var11B(newNumerator, newDenominator);
+            return new Fraction(newNumerator, newDenominator);
         }
 
 
-        public Var11B divide(Var11B other) {
+        public Fraction divide(Fraction other) {
             if (other.numerator == 0) {
                 throw new ArithmeticException("Cannot divide by zero.");
             }
             int newNumerator = this.numerator * other.denominator;
             int newDenominator = this.denominator * other.numerator;
-            return new Var11B(newNumerator, newDenominator);
+            return new Fraction(newNumerator, newDenominator);
         }
 
 
